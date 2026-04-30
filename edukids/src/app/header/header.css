@@ -1,0 +1,113 @@
+.header-main {
+    background-color: var(--blanco);
+    color: var(--azul-principal);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 5px 5px 10px var(--soft-shadow);
+    position: relative; 
+    z-index: 10;        
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+
+    position: sticky; 
+    top: 0;          
+    z-index: 900;
+}
+
+.logo-container {
+    display: flex;
+    justify-content: center;
+    height: 8rem;
+    margin-left: 5rem;
+}
+
+.logo-img {
+    width: 100%;
+    max-width: 220px;
+    object-fit: contain; 
+}
+
+.menu-icon {
+    display: none; 
+    font-size: 2.5rem; /* Tamaño del ícono */
+    color: var(--azul-principal);
+    cursor: pointer; /* Cambia el cursor para que parezca un botón */
+    margin-right: 1.5rem; /* Espacio a la derecha del ícono */
+}
+
+.nav-items {
+    display: flex;
+    flex-direction: row;
+    margin: 0 3rem 0 0; /* Ajustado para que no empuje demasiado */
+    gap: 3rem; 
+}
+
+.nav-items a {
+    color: var(--azul-principal);
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: 600; 
+    text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, color 0.2s ease; 
+}
+
+.nav-items a:hover {
+    transform: scale(1.1); 
+}
+
+@media (max-width: 768px) {
+
+    .logo-container{
+        height: 7rem; 
+        margin-left: 1.25rem;
+    }
+
+    .logo-img {
+        max-width: 150px;
+    }
+
+    .nav-items {
+        display: none; /* Sigue oculto por defecto */
+        flex-direction: column;
+        align-items: center;
+        position: absolute;
+        top: 100%; /* La magia: Se ubica justo debajo del borde inferior del header */
+        left: 0;
+        width: 100%;
+        background-color: var(--blanco);
+        padding: 2rem 0; /* Espaciado arriba y abajo */
+        box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.15); /* Sombra hacia abajo para separarlo del contenido */
+        border-top: 1px solid #f3f4f6; /* Una línea sutil para separarlo del header */
+        margin: 0; 
+        gap: 2rem; /* Separación vertical entre los enlaces */
+    }
+
+    /* Esta es la clase que Angular activa cuando haces clic */
+    .nav-items.active {
+        display: flex;
+        animation: deslizarAbajo 0.3s ease forwards;
+    }
+
+    /* Opcional: Centrar los enlaces y hacerlos un poco más grandes para dedos */
+    .nav-items a {
+        margin: 0;
+        font-size: 1.3rem;
+        width: 100%;
+        text-align: center;
+    }
+
+    .menu-icon {
+        display: block;
+    }
+}
+
+@keyframes deslizarAbajo {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

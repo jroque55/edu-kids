@@ -1,0 +1,27 @@
+/* You can add global styles to this file, and also import other style files */
+:root {
+    font-family: 'Circular Std', sans-serif;
+    --amarillo-principal: #FFD131;
+    --azul-principal: #001F5B;
+    --blanco: #f2f2f2;
+    background-color: var(--blanco);
+    --soft-shadow: 2px 3px 6px rgba(0, 0, 0, 0.25);
+    --text-color: #d1d5db;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body{
+    margin: 0;
+}
+
+@font-face {
+  font-family: 'Circular Std';
+  src: url('./assets/fonts/circular-std.woff2') format('woff2'),
+       url('./assets/fonts/circular-std.woff2') format('woff'); /* Fallback si woff2 no es compatible */
+  font-weight: 400; /* Normal */
+  font-style: normal;
+  font-display: swap; /* Mejora el rendimiento de carga */
+}

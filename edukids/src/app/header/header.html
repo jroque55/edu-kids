@@ -1,0 +1,16 @@
+<header class="header-main">
+    <div class="logo-container">
+        <img src="logo-sin-blanco.png" alt="Logo de EduKids" class="logo-img">
+    </div>
+    
+    <i class="menu-icon" 
+       [class]="isMenuOpen ? 'bi bi-x-lg' : 'bi bi-list'" 
+       (click)="toggleMenu()"></i>
+
+    <nav class="nav-items" [class.active]="isMenuOpen">
+        <a href=#inicio (click)="toggleMenu()">Inicio</a>
+        <a href=#actividades (click)="toggleMenu()">Actividades</a>
+        <a href=#sedes (click)="toggleMenu()">Sedes</a>
+        <a href=#contacto (click)="toggleMenu()">Contacto</a>
+    </nav>
+</header>

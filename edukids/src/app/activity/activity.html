@@ -1,0 +1,54 @@
+<div class="container" (click)="openModal()">
+    <div class="activity-container">
+        <div class="img-container">
+            <img [src]="activity.icono" alt="{{ activity.nombre }}" class="icono"> 
+        </div> 
+       <h2 class="activity-name">{{ activity.nombre }}</h2>
+    </div>
+</div>
+
+@if (isModalOpen) {
+    <div class="modal-backdrop" (click)="closeModal()">
+        
+        <div class="modal-content" (click)="$event.stopPropagation()">
+            
+            <button class="close-btn" (click)="closeModal()">
+                <i class="bi bi-x-lg"></i>
+            </button>
+            
+            <h2 class="modal-title">{{ activity.nombre }}</h2>
+            
+            <div class="modal-body">
+                <div class="modal-text">
+                    <p>{{ activity.descripcion }}</p>
+                </div>
+            </div>
+
+            @if (activity.imagen && activity.imagen.length > 0) {
+            <div class="modal-carousel-wrapper">
+                
+                @if (activity.imagen.length > 1) {
+                    <button class="modal-arrow prev" (click)="moverCarrusel(carrusel, -1)">
+                        <i class="bi bi-chevron-left"></i>
+                    </button>
+                }
+
+                <div class="modal-carousel" #carrusel>
+                    @for (foto of activity.imagen; track $index) {
+                        <img [src]="foto" alt="Foto de {{ activity.nombre }}" class="modal-carousel-item">
+                    }
+                </div>
+
+                @if (activity.imagen.length > 1) {
+                    <button class="modal-arrow next" (click)="moverCarrusel(carrusel, 1)">
+                        <i class="bi bi-chevron-right"></i>
+                    </button>
+                }
+            </div>
+            }
+            <a href="https://wa.me/51975288784?text=Hola, quiero más información sobre el taller de {{ activity.nombre }}." target="_blank">
+                <button class="inscribete-btn">¡Me interesa!</button>
+            </a>
+        </div>
+    </div>
+}

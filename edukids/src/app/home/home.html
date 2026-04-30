@@ -1,0 +1,62 @@
+<section id="inicio" class="hero-section">
+    <div class="main-container">
+        <div class="content-group">
+            <div class="foco-title-group">
+                <img src="foco-sin-fondo.png" alt="foco" class="foco-img">
+                <h1 class="title">
+                    Taller <br>
+                    educativo <br>
+                    para niños
+                </h1>
+            </div>
+            <div class="description">
+                <p>
+                    Desarrollamos el potencial de tu hijo a través de actividades educativas y recreativas diseñadas especialmente para niños y adolescentes de 5 a 16 años.
+                </p>
+            </div>
+            <div class="botones">
+                <a href="https://wa.me/51975288784?text=Hola, quiero inscribir a mi hijo a los talleres de edukids" target="_blank">
+                    <button class="inscribete">
+                        ¡Inscribete ahora!
+                    </button>
+                </a>
+                <a href="https://wa.me/51975288784?text=Hola, quiero más información sobre los talleres de edukids" target="_blank">
+                    <button class="informacion">
+                        Más información
+                    </button>
+                </a>
+            </div>
+        </div>
+        <div class="image-group">
+            <div class="carousel-wrapper">
+                <div class="carousel-bg"></div>
+                
+                <div class="carousel-images">
+                    @for (img of images; track $index) {
+                        <img [src]="img" 
+                            alt="Actividad EduKids" 
+                            class="carousel-img" 
+                            [class.active]="currentSlide === $index">
+                    }
+                </div>
+
+                <button class="carousel-control prev" (click)="prevSlide()">
+                    <i class="bi bi-chevron-left"></i>
+                </button>
+                <button class="carousel-control next" (click)="nextSlideManual()">
+                    <i class="bi bi-chevron-right"></i>
+                </button>
+
+                <!-- Los puntitos de navegación inferiores -->
+                <div class="carousel-dots">
+                    @for (img of images; track $index) {
+                        <div class="dot" 
+                            [class.active]="currentSlide === $index" 
+                            (click)="setSlide($index)">
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

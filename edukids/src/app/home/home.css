@@ -1,0 +1,267 @@
+.hero-section {
+    background-color: var(--blanco);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    margin: auto;
+    padding: 4rem 2rem; /* Espaciado interno para que no quede tan pegado a los bordes en pantallas pequeñas */
+    gap: 3rem; /* Espacio entre el texto y la imagen */
+}
+
+.main-container {
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin: auto;
+}
+
+.botones{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 1rem;
+    width: 100%;
+    font-size: 1.4rem;
+}
+
+.inscribete{
+    background-color: var(--amarillo-principal);
+    color: var(--azul-principal);
+    padding: 1.2rem 3.5rem;
+    border-radius: 12px;
+    font-weight: 1000;
+    border: none;
+    margin-top: 1rem; 
+    cursor: pointer;
+
+    transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+.inscribete:hover {
+    transform: scale(1.05);
+    filter: brightness(1.2);
+}   
+
+.informacion{
+    background-color: var(--blanco);
+    color: var(--azul-principal);
+    padding: 1.2rem 3.5rem;
+    border-radius: 12px;
+    border: 1px solid var(--azul-principal);
+    margin-top: 1rem; 
+    cursor: pointer;
+    transition: transform 0.2s ease, filter 0.2s ease;
+    font-weight: 1000;
+}
+
+.informacion:hover {
+    transform: scale(1.05);
+    filter: brightness(1.2);
+}
+
+.content-group {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    padding-right: 1rem;
+}
+
+.foco-title-group {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+}
+
+.foco-img {
+    width: 100px;
+    height: auto;
+}
+
+.description p {
+    color: #4b5563; /* Un gris oscuro y suave */
+    line-height: 1.6; 
+    margin-top: 1rem;
+    font-size: 1.1rem;
+}
+
+.title {
+    color: var(--azul-principal);
+    font-size: 3.3rem; /* Tamaño fluido: mínimo 2rem, máximo 3.5rem */
+    line-height: 1.1;
+    font-weight: 800;
+    margin: 0;
+    text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.image-group {
+    position: relative;
+    width: 100%;
+    max-width: 550px; 
+    margin: auto;
+}
+
+.carousel-wrapper {
+    position: relative;
+    width: 100%;
+    padding-bottom: 2rem;
+}
+
+.carousel-bg {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    right: -20px;
+    bottom: 0;
+    background-color: var(--amarillo-principal);
+    border-radius: 20px;
+    z-index: 0;
+}
+
+/* El contenedor de las fotos */
+.carousel-images {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    aspect-ratio: 16 / 9; /* Proporción panorámica, ajústala según tus fotos */
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15);
+    background-color: var(--blanco);
+}
+
+/* Transición suave entre imágenes */
+.carousel-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Evita que las fotos se deformen */
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.carousel-img.active {
+    opacity: 1;
+}
+
+/* Contenedor de los puntos */
+.carousel-dots {
+    position: absolute;
+    bottom: 15px; /* Los coloca justo sobre el fondo amarillo */
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 0.5rem;
+    z-index: 2;
+}
+
+/* Estilo de los puntos inactivos */
+.dot {
+    width: 12px;
+    height: 12px;
+    background-color: rgba(255, 255, 255, 0.6);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+/* Estilo del punto activo (como en tu foto, se estira como una píldora) */
+.dot.active {
+    width: 25px; 
+    border-radius: 6px;
+    background-color: var(--amarillo-principal); /* O blanco puro (#fff) si resalta más */
+    box-shadow: 0px 0px 4px rgba(0,0,0,0.2);
+}
+
+/* --- Estilos para las flechas del carrusel --- */
+.carousel-control {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%); /* Centra el botón verticalmente perfecto */
+    background-color: rgba(255, 255, 255, 0.7); /* Blanco un poco transparente */
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 3; /* Asegura que estén por encima de las fotos */
+    color: var(--azul-principal); /* Flechas del color de tu marca */
+    font-size: 1.5rem;
+    transition: all 0.2s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Efecto al pasar el mouse por las flechas */
+.carousel-control:hover {
+    background-color: var(--blanco);
+    transform: translateY(-50%) scale(1.1); /* Hace zoom sin perder el centro vertical */
+}
+
+/* Ubicación específica de cada flecha */
+.carousel-control.prev {
+    left: 10px;
+}
+
+.carousel-control.next {
+    right: 10px;
+}
+
+@media (max-width: 768px) {
+    .image-group {
+        width: 90%; 
+        margin: 0 auto; /* Asegura que siga perfectamente centrado */
+    }
+
+    /* 2. Hacemos el efecto de sombra/desfase un poco más sutil para pantallas chicas */
+    .carousel-bg {
+        top: 12px;
+        left: 12px;
+        right: -8px; /* Ahora esos -12px tienen espacio para existir gracias al width 90% */
+        bottom: 0;
+    }
+    
+    /* Opcional: Ajustar los botones para que no queden pegados si están arriba de la imagen */
+    .content-group {
+        padding-right: 0; /* Quitamos el padding que era solo para la computadora */
+        width: 100%;
+        box-sizing: border-box; /* Asegura que los márgenes no ensanchen la caja */
+    }
+
+    .botones {
+        flex-direction: column; 
+        width: 100%;
+        gap: 1rem;
+    }
+
+    .botones a {
+        width: 100%;
+    }
+
+    .title {
+        font-size: 2.3rem; 
+    }
+    .main-container {
+        flex-direction: column;
+        gap: 2rem;
+    }
+    
+    .content-group {
+        padding-right: 0; /* Quitamos el padding que era solo para la computadora */
+        width: 90%;
+        box-sizing: border-box; /* Asegura que los márgenes no ensanchen la caja */
+    }
+
+    .inscribete, .informacion {
+        width: 100%;
+        margin-top: 0; /* Reseteamos el margin por si tenían de antes */
+    }
+
+}
