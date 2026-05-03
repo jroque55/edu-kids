@@ -2,5 +2,48 @@
   "dependencies": {
     "20": "^3.1.9",
     "@angular/cli": "^21.2.7"
-  }
+  },
+  "name": "edukids",
+  "version": "1.0.0",
+  "description": "Desarrollamos el potencial de tu hijo a través de actividades educativas y recreativas diseñadas especialmente para niños y adolescentes de 5 a 16 años.",
+  "main": "index.html",
+  "scripts": {
+    "test": "npm run test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jroque55/edu-kids.git"
+  },
+  "keywords": [
+    "academia",
+    "edukids",
+    "taller",
+    "actividades",
+    "niños",
+    "ajedrez",
+    "minichef",
+    "robotica",
+    "karate",
+    "oratoria",
+    "perú",
+    "los",
+    "olivos",
+    "san",
+    "martin",
+    "san",
+    "martin",
+    "de",
+    "porres",
+    "bailes",
+    "kids",
+    "experimentos",
+    "matemática",
+    "refuerzo"
+  ],
+  "author": "Jroque",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jroque55/edu-kids/issues"
+  },
+  "homepage": "https://github.com/jroque55/edu-kids#readme"
 }
