@@ -2,10 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { Activity } from '../activity/activity';
 import { ActivityService } from '../services/activity-service';
 import { ActivityModel } from '../activity/activity.model';
+import { ScrollRevealDirective } from '../scroll-reveal';
 
 @Component({
   selector: 'app-info',
-  imports: [Activity],
+  imports: [Activity, ScrollRevealDirective],
   templateUrl: './info.html',
   styleUrl: './info.css',
 })

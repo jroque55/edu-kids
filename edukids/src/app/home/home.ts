@@ -1,8 +1,9 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
+import { ScrollRevealDirective } from '../scroll-reveal';
 
 @Component({
   selector: 'app-home',
-  imports: [],
+  imports: [ScrollRevealDirective],
   templateUrl: './home.html',
   styleUrl: './home.css',
 })
