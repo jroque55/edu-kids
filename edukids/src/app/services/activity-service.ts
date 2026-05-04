@@ -64,7 +64,7 @@ export class ActivityService {
   {
     nombre: 'Karate',
     descripcion: 'Potencia la energía física de tu hijo(a) y desarrolla su autoestima y autocontrol mediante técnicas, movimientos y estrategias.',
-    imagen: ['karate1.jpeg'],
+    imagen: ['karate1.jpeg', 'karate2.png'],
     icono: 'karate.svg',
   },
   /*{
@@ -100,7 +100,7 @@ export class ActivityService {
   {
     nombre: 'Robótica',
     descripcion: 'Los alumnos aprenderán a armar proyectos de robótica con kits de lego NXT, a la par que aprenderán principios básicos de física e ingeniería.',
-    imagen: ['robotica1.jpeg', 'robotica2.jpeg', 'robotica3.jpeg', 'robotica4.jpeg'],
+    imagen: ['robotica1.jpeg', 'robotica2.jpeg', 'robotica3.jpeg', 'robotica4.jpeg', 'robotica6.png'],
     icono: 'robot.svg',
   }
   /*{

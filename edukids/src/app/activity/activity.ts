@@ -1,9 +1,10 @@
 import { Component, Input } from '@angular/core';
 import { ActivityModel } from './activity.model';
+import { ScrollRevealDirective } from '../scroll-reveal';
 
 @Component({
   selector: 'app-activity',
-  imports: [],
+  imports: [ScrollRevealDirective],
   templateUrl: './activity.html',
   styleUrl: './activity.css',
 })
