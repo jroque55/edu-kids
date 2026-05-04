@@ -10,6 +10,23 @@ section {
     font-size: 5rem;
 }
 
+.instruccion-clic {
+    text-align: center;
+    color: #6b7280; /* Un gris suave para que no compita con el título */
+    font-size: 1.1rem;
+    margin-top: -0.5rem; /* Lo acercamos un poquito al título principal */
+    margin-bottom: 2.5rem; /* Le damos espacio antes de que empiecen las tarjetas */
+    font-weight: 500;
+}
+
+.instruccion-clic i {
+    color: var(--azul-principal); /* El ícono del dedito en tu color principal */
+    margin-right: 0.4rem;
+    font-size: 1.2rem;
+    animation: pulsar 2s infinite; /* Un pequeño efecto opcional para llamar la atención */
+    display: inline-block;
+}
+
 .main-container {
     display: flex;
     flex-direction: column;
@@ -33,10 +50,19 @@ section {
     box-sizing: border-box;
 }
 
-
+@keyframes pulsar {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.15); }
+    100% { transform: scale(1); }
+}
 
 @media (max-width: 768px) {
-
+    .instruccion-clic {
+        font-size: 0.95rem;
+        margin-bottom: 1.5rem;
+        padding: 0 1rem;
+    }
+    
     .actividades-container {
         gap: 2rem;
     }

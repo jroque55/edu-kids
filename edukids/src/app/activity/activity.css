@@ -97,7 +97,6 @@
     margin-bottom: 1.5rem;
 }
 
-/* El Carrusel en sí */
 .modal-carousel {
     display: flex;
     flex-direction: row;
@@ -137,9 +136,7 @@
     filter: brightness(1.1); /* Se hace más brillante */
 }
 
-/* Ubicación de cada flecha */
 .modal-arrow.prev {
-    /* Las sacamos un poco del borde para que no tapen las fotos */
     left: -15px; 
 }
 
@@ -150,9 +147,12 @@
 .modal-carousel-item {
     flex: 0 0 100%; 
     height: 250px; 
+    width: 100%;
+    max-width: 100%;
     object-fit: cover;
     border-radius: 12px;
-    scroll-snap-align: center; /* Asegura que la foto frene justo en el centro */
+    scroll-snap-align: start; 
+    scroll-snap-stop: always; 
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
