@@ -41,29 +41,51 @@
     position: fixed;
     top: 0;
     left: 0;
-    width: 100vw;
-    height: 100vh;
-    background-color: rgba(0, 0, 0, 0.6); /* Negro transparente */
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
     display: flex;
     justify-content: center;
-    align-items: center;
-    z-index: 1000; /* Asegura que esté por encima de TODO el header y carrusel */
-    padding: 1rem;
+    align-items: center; /* Centrado por defecto */
+    overflow-y: auto; /* Permite scroll si el modal es muy alto */
+    z-index: 2000; /* Aumentado para asegurar que esté sobre el header */
+    padding: 2rem 1rem;
     box-sizing: border-box;
-    backdrop-filter: blur(4px); /* Un efecto de desenfoque moderno al fondo */
+    backdrop-filter: blur(4px);
 }
 
 .modal-content {
     background-color: var(--blanco);
     border-radius: 20px;
-    padding: 2.5rem;
+    padding: 2rem;
     max-width: 600px;
     width: 100%;
     position: relative;
-    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.3);
     text-align: center;
-    /* Animación de entrada */
+    margin: auto; /* Ayuda a que el scroll del backdrop funcione bien */
     animation: modalEmerge 0.3s ease-out forwards; 
+}
+
+@media (max-width: 768px) {
+    .modal-backdrop {
+        align-items: flex-start; /* En móviles, mejor que empiece desde arriba */
+    }
+
+    .modal-content {
+        padding: 1.5rem;
+        margin-top: 1rem; /* Un poco de margen superior */
+        border-radius: 15px;
+    }
+
+    .modal-title {
+        font-size: 1.8rem;
+        margin-bottom: 1rem;
+    }
+
+    .modal-carousel-item {
+        height: 200px; /* Reducir altura carrusel en móviles */
+    }
 }
 
 /* Animación para que el modal aparezca flotando */
