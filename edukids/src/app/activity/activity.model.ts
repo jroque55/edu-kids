@@ -1,6 +1,6 @@
 export interface ActivityModel {
     nombre: string;
-    descripcion: String;
+    descripcion: string;
     imagen: string[];
     icono: string;
 }

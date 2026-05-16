@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Renderer2 } from '@angular/core';
 import { ActivityModel } from './activity.model';
 import { ScrollRevealDirective } from '../scroll-reveal';
 
@@ -13,14 +13,16 @@ export class Activity {
   
   isModalOpen: boolean = false;
 
+  constructor(private renderer: Renderer2) {}
+
   openModal() {
     this.isModalOpen = true;
-    document.body.style.overflow = 'hidden'; 
+    this.renderer.setStyle(document.body, 'overflow', 'hidden');
   }
 
   closeModal() {
     this.isModalOpen = false;
-    document.body.style.overflow = 'auto';
+    this.renderer.setStyle(document.body, 'overflow', 'auto');
   }
 
   moverCarrusel(elemento: HTMLElement, direccion: number) {

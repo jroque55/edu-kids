@@ -3,8 +3,9 @@
         <img src="logo-sin-blanco.png" alt="Logo de EduKids" class="logo-img">
     </div>
     
-    <i class="menu-icon" 
-       [class]="isMenuOpen ? 'bi bi-x-lg' : 'bi bi-list'" 
+    <i class="menu-icon bi" 
+       [class.bi-x-lg]="isMenuOpen" 
+       [class.bi-list]="!isMenuOpen" 
        (click)="toggleMenu()"></i>
 
     <nav class="nav-items" [class.active]="isMenuOpen">

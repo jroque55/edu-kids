@@ -101,7 +101,7 @@
     display: flex;
     flex-direction: row;
     overflow-x: auto; /* Permite desplazamiento horizontal */
-    scroll-snap-type: x mandatory; /* MAGIA: Hace que el scroll se "pegue" a cada foto */
+    scroll-snap-type: x mandatory;
     gap: 1rem;
     padding-bottom: 1rem; /* Espacio para que respire la barra de scroll */
     scroll-behavior: smooth; /* Movimiento suave */
