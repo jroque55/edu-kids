@@ -1,4 +1,4 @@
-import { Component, Input, Renderer2 } from '@angular/core';
+import { Component, Input, Renderer2, ElementRef } from '@angular/core';
 import { ActivityModel } from './activity.model';
 import { ScrollRevealDirective } from '../scroll-reveal';
 
@@ -13,11 +13,20 @@ export class Activity {
   
   isModalOpen: boolean = false;
 
-  constructor(private renderer: Renderer2) {}
+  constructor(private renderer: Renderer2, private el: ElementRef) {}
 
   openModal() {
+    this.el.nativeElement.scrollIntoView({ 
+      behavior: 'smooth', 
+      block: 'center' 
+    });
+
     this.isModalOpen = true;
-    this.renderer.setStyle(document.body, 'overflow', 'hidden');
+
+    // Pequeño delay para que el scrollIntoView no se corte al bloquear el body
+    setTimeout(() => {
+      this.renderer.setStyle(document.body, 'overflow', 'hidden');
+    }, 300);
   }
 
   closeModal() {
