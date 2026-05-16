@@ -102,7 +102,6 @@
 .modal-fotos {
     display: grid;
     /* MAGIA GRID: Crea columnas de mínimo 120px. Si sobra espacio, las estira. 
-       Si falta espacio (celulares), las baja a la siguiente línea automáticamente. */
     grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
     gap: 1rem; /* Espacio entre las fotos */
     width: 100%;
@@ -244,6 +243,7 @@
 
     .modal-content {
         padding: 1.5rem;
+        width: 80%;
     }
     .modal-title {
         font-size: 2rem;

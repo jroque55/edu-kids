@@ -1,5 +1,5 @@
-<div class="container" (click)="openModal()">
-    <div class="activity-container reveal-item" appScrollReveal>
+<div class="container reveal-item" appScrollReveal (click)="openModal()">
+    <div class="activity-container" >
         <div class="img-container">
             <img [src]="activity.icono" alt="{{ activity.nombre }}" class="icono"> 
         </div> 

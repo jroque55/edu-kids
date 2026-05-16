@@ -26,6 +26,13 @@ html {
 
 body{
     margin: 0;
+    padding-top: 8rem; 
+}
+
+@media (max-width: 768px) {
+    body {
+        padding-top: 7rem; 
+    }
 }
 
 @font-face {
